@@ -1,0 +1,47 @@
+name: 이슈 템플릿
+description: 이슈 템플릿의 목적을 설명해주세요.
+title: ''
+labels: []
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🌈 Success criteria  
+        요구사항을 상세히 설명해주세요. 글/사진/그림(흐름도) 모두 사용해봅시다.  
+        예: 요구사항명세서를 참고해서 Main 시트의 메뉴 정보(전체)기능을 만들어주세요.  
+
+  - type: textarea
+    id: success-criteria
+    attributes:
+      label: 요구사항 설명
+      description: 구현해야 할 기능의 요구사항을 상세히 적어주세요.
+      placeholder: ex) Main 시트에서 전체 메뉴 정보를 표 형태로 보여주어야 합니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: to-do
+    attributes:
+      label: 👷 To-do
+      description: 구현을 위한 세부 단계를 작성해주세요. (체크리스트 형태 가능)
+      placeholder: |
+        - [ ] 데이터 수집
+        - [ ] UI 레이아웃 구성
+        - [x] 기본 로직 구현
+        - [ ] 테스트 코드 작성
+    validations:
+      required: false
+
+  - type: textarea
+    id: review
+    attributes:
+      label: 🧶 Review
+      description: 작업 결과나 공유할 내용, 테스트 결과 등을 작성해주세요.
+      placeholder: |
+        - 작업 완료 여부
+        - 스크린샷이나 테스트 결과 첨부
+        - 생긴 고민이나 팀원과 공유할 내용
+    validations:
+      required: false
