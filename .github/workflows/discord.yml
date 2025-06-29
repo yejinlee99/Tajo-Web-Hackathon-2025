@@ -1,0 +1,20 @@
+name: Discord Push Notification
+
+on:
+  push:
+    branches:
+      - dev  # ← 너가 실제로 push 하는 브랜치 이름!
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Discord Notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          curl -H "Content-Type: application/json" \
+          -X POST \
+          -d "{\"content\": \"🚀 **${{ github.actor }}**님이 **${{ github.repository }}**에 push 했어요! 🔗 [커밋 보기](https://github.com/${{ github.repository }}/commit/${{ github.sha }})\"}" \
+          $DISCORD_WEBHOOK
