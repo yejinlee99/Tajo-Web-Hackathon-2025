@@ -1,0 +1,4 @@
+requests
+notebook
+openai-whisper
+gTTS
