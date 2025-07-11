@@ -26,8 +26,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j#&)fm4#799%#$rm3gtm33ut_^q$e78qdi5-^94##o49+c#d_l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -89,10 +87,10 @@ WSGI_APPLICATION = 'tajo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tajo_db',  # 데이터베이스 이름
+        'NAME': os.getenv('DB_NAME'),  # 데이터베이스 이름
         'USER': os.getenv('DB_USER'),        # MySQL 사용자
         'PASSWORD': os.getenv('DB_PASSWORD'),# MySQL 비밀번호
-        'HOST': '127.0.0.1',   # 로컬 호스트
+        'HOST': os.getenv('DB_HOST'),   # 로컬 호스트
         'PORT': '3306',        # MySQL 포트
     }
 }
