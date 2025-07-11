@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('app1.urls')),  # myapp의 URL 연결
+    path('', include('main.urls')),  # 메인 페이지 url 연결
 ]
