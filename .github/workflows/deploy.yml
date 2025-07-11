@@ -1,26 +1,31 @@
-name: Django CICD App
+name: Deploy to Elastic Beanstalk
 
 on:
-  pull_request_target:
+  push:
     branches:
-      - main
-    types:
-      - closed
+      - main  
 
 jobs:
-  build-deploy:
+  deploy:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source code
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Beanstalk Deploy
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+
+      - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v20
         with:
-          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: ${{ secrets.AWS_APPLICATION_NAME }}
           environment_name: ${{ secrets.AWS_ENVIRONMENT_NAME }}
-          region: ap-northeast-2
           version_label: "app-${{ github.sha }}"
+          region: ap-northeast-2
+          file: deploy/tajo-app.zip # 배포할 파일 경로
+
