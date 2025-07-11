@@ -1,0 +1,41 @@
+name: Deploy to Elastic Beanstalk
+
+on:
+  push:
+    branches:
+      - main  # 운영 브랜치. dev 브랜치로 하고 싶으면 'main'을 'dev'로 바꿔줘!
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ 깃허브 레포 코드 체크아웃
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2️⃣ Python 가상환경 세팅
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12  
+
+      # 3️⃣ EB CLI 설치
+      - name: Install EB CLI
+        run: |
+          pip install awsebcli
+
+      # 4️⃣ AWS 인증 정보 설정 & 배포 실행
+      - name: Deploy to Elastic Beanstalk
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ap-northeast-2  # 서울 리전이면 이렇게!
+        run: |
+          echo "---- EB INIT ----"
+          eb init your-eb-app-name \
+            --platform "Python 3.12 running on 64bit Amazon Linux" \
+            --region ap-northeast-2
+
+          echo "---- EB DEPLOY ----"
+          eb deploy your-eb-env-name
