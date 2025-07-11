@@ -1,1 +1,1 @@
-web: gunicorn tajo.wsgi:application
+web: gunicorn tajo.tajo.wsgi:application
