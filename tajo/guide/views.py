@@ -4,5 +4,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def home(request):
-    return render(request, 'main/main_home.html')
+def guide_home(request):
+    return render(request, 'guide/guide_home.html')

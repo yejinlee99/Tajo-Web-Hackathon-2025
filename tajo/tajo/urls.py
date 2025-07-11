@@ -20,4 +20,10 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),  # 메인 페이지 url 연결
+    path('call/', include('call.urls')),  # call url 연결
+    path('faq/', include('faq.urls')),  # faq url 연결
+    path('guide/', include('guide.urls')),  # guide url 연결
+    path('kakao/', include('kakao.urls')),  # kakao url 연결
+    path('mypage/', include('mypage.urls')),  # mypage url 연결
+    path('dashboard/', include('dashboard.urls')),  # dashboard url 연결
 ]
