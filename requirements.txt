@@ -2,3 +2,4 @@ django
 pymysql
 python-dotenv
 cryptography
+gunicorn
