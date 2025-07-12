@@ -42,13 +42,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main',
-    'call',
-    'faq',
-    'guide',
-    'kakao',
-    'mypage',
-    'dashboard',
+    # 'main',
+    # 'call',
+    # 'faq',
+    # 'guide',
+    # 'kakao',
+    # 'mypage',
+    # 'dashboard',
+    'tajo.main',
+    'tajo.call',
+    'tajo.faq',
+    'tajo.guide',
+    'tajo.kakao',
+    'tajo.mypage',
+    'tajo.dashboard',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +68,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'tajo.urls'
+ROOT_URLCONF = 'tajo.tajo.urls'
 
 TEMPLATES = [
     {
@@ -78,7 +85,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tajo.wsgi.application'
+WSGI_APPLICATION = 'tajo.tajo.wsgi.application'
 
 
 # Database
