@@ -1,0 +1,22 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+      "Name": "yejin99/breadscanso-asgi:latest",
+      "Update": "true"
+    },
+    "Ports": [
+      {
+        "ContainerPort": 8000,
+        "HostPort": 8000
+      }
+    ],
+    "Environment": {
+      "DATABASE_HOST": "$DATABASE_PROD_HOST",
+      "DATABASE_USER": "$DATABASE_PROD_USER",
+      "DATABASE_PASSWORD": "$DATABASE_PROD_PASSWORD",
+      "DATABASE_NAME": "$DATABASE_PROD_NAME",
+      "DATABASE_PORT": "$DATABASE_PROD_PORT"
+    },
+    "Volumes": [],
+    "Logging": "/var/log/nginx"
+  }
