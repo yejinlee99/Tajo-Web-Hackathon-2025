@@ -30,7 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '.elasticbeanstalk.com',  # 와일드카드로 Beanstalk 도메인 전부 허용
+]
 
 
 # Application definition
@@ -42,13 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'main',
-    # 'call',
-    # 'faq',
-    # 'guide',
-    # 'kakao',
-    # 'mypage',
-    # 'dashboard',
+
     'tajo.main',
     'tajo.call',
     'tajo.faq',
