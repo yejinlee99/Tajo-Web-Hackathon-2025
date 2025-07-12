@@ -20,7 +20,7 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG') == 'True'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,6 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "127.0.0.1",
     "54.180.178.147",
     "eb-taewojo-env.eba-scw6jbim.ap-northeast-2.elasticbeanstalk.com",
 ]
@@ -70,7 +71,7 @@ ROOT_URLCONF = 'tajo.tajo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'tajo' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
