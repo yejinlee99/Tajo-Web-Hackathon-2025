@@ -31,7 +31,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '.elasticbeanstalk.com',  # 와일드카드로 Beanstalk 도메인 전부 허용
+    "54.180.178.147",
+    "eb-taewojo-env.eba-scw6jbim.ap-northeast-2.elasticbeanstalk.com",
 ]
 
 
