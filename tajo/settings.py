@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
-    "54.180.178.147",
+    "52.78.209.56",
     "eb-taewojo-env.eba-scw6jbim.ap-northeast-2.elasticbeanstalk.com",
     "www.taewojo.site",
     "taewojo.site"
