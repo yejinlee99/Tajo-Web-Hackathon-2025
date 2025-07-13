@@ -20,7 +20,7 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG') == 'True'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -49,13 +49,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'tajo.main',
-    'tajo.call',
-    'tajo.faq',
-    'tajo.guide',
-    'tajo.kakao',
-    'tajo.mypage',
-    'tajo.dashboard',
+    'main',
+    'call',
+    'faq',
+    'guide',
+    'kakao',
+    'mypage',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -68,12 +68,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'tajo.tajo.urls'
+ROOT_URLCONF = 'tajo.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'tajo' / 'templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,7 +85,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tajo.tajo.wsgi.application'
+WSGI_APPLICATION = 'tajo.wsgi.application'
 
 
 # Database
@@ -143,7 +143,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
     ]
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+# STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
