@@ -1,7 +1,7 @@
 {
     "AWSEBDockerrunVersion": "1",
     "Image": {
-      "Name": "yejin99/breadscanso-asgi:latest",
+      "Name": "yejin99/tajo-web:latest",
       "Update": "true"
     },
     "Ports": [
