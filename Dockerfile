@@ -21,7 +21,10 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # 프로젝트 파일 복사
 COPY . .
 
-# ENTRYPOINT 컨테이너 실행 명령어
-ENTRYPOINT ["gunicorn", "-c", "gunicorn.conf.py"]
+
+# CMD로 직접 실행 명령어 작성
+CMD ["gunicorn", "-w", "3", "-b", ":8000", "tajo.wsgi:application"]
+
+
 # EXPOSE 컨테이너외부로 노출 포트
 EXPOSE 8000
