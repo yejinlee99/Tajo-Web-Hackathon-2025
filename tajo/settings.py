@@ -138,13 +138,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')   # <- collectstatic 결과물 모이는 곳
+STATICFILES_DIRS = [BASE_DIR / "static"]              # <- 소스 static 파일
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static"
-    ]
-
-# STATIC_ROOT = str(BASE_DIR / 'staticfiles')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Default primary key field type
