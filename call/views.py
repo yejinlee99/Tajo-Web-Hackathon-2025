@@ -4,5 +4,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def call_home(request):
-    return render(request, 'call/call_home.html')
+def where_to(request):
+    return render(request, 'call/where_to.html')

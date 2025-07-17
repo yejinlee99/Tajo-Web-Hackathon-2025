@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.call_home, name='call_home'),  # call 홈화면 url
+    path('', views.where_to, name='where_to'),  # call 홈화면 url
 ]
