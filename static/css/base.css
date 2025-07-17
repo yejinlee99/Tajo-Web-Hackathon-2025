@@ -1,15 +1,29 @@
-/* 기본 base 버튼, 폰트, 공통 레이아웃 등 을 관리합니다. */
+/* 모바일 화면처럼 보이게 하는 스타일을 관린합니다. */
+/* 현재 모바일 설정 : iPhone SE */
 
 
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #858282;
+  }
+  
 
-body {
-    background-color: #f5f5f5;
-}
+/* 공통 모바일 박스 스타일 */
+.container {
+    max-width: 375px;
+    margin: 0 auto;
+    background-color: white; /* 내부 박스는 흰색 */
+    min-height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 모바일 박스 느낌 */
+    padding: 1rem;
+    box-sizing: border-box;
+  }
 
-h1 {
+/* h1 {
     color: darkblue;
     text-align: center;
-}
+} */
 
 /* 버튼 */
 .btn {

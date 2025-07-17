@@ -1,19 +1,19 @@
-<!-- templates/base.html -->
+{% extends "layout/base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Static files test</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/call.css' %}">
-</head>
-<body>
-    <h1>호출 화면 - 홈</h1>
-    <h2>이건 두번째 레슨....</h2>
-    <h2>제발......css, js 적용 되라......화딱지 나기전에</h2>
-    <a href="{% url 'main_home' %}" class="btn">이전....메인 홈</a> <br>
 
+{% block title %}목적지 설정{% endblock %}
 
-</body>
-</html>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/call.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<h1>목적지 설정</h1>
+<h2>이건 두번째 레슨....</h2>
+<a href="{% url 'main_home' %}" class="btn">이전....메인 홈</a>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock content %}
+
+{% block script %}
+{% endblock script %}
