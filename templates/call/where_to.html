@@ -8,9 +8,41 @@
 {% endblock extra_css %}
 
 {% block content %}
-<h1>목적지 설정</h1>
-<h2>이건 두번째 레슨....</h2>
-<a href="{% url 'main_home' %}" class="btn">이전....메인 홈</a>
+<div class="head_container">
+    <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
+    <h1>목적지 설정</h1>
+</div>
+
+<div class="screen">
+    <div class="div">
+        <div class="rectangle"></div>
+        <img class="element" src="img/2025-07-08-3-47-22-1.png" />
+        <img class="img" src="img/2025-07-08-3-48-03-1.png" />
+        <div class="overlap">
+            <img class="element-2" src="img/2025-07-08-3-57-29-1.png" />
+            <div class="rectangle-2"></div>
+                <div class="frame">
+                    <div class="overlap-group">
+                    <div class="ellipse"></div>
+                <div class="text-wrapper">⌖</div>
+            </div>
+            <div class="text-wrapper-2">🚌</div>
+            <p class="DRT">가까운 서비스 지역에서<br />DRT를 호출해 보세요.</p>
+            <div class="div-wrapper"><div class="text-wrapper-3">운행정보</div></div>
+            <img class="element-3" src="img/2025-07-08-4-05-53-1.png" />
+            <div class="text-wrapper-4">🏠 집</div>
+            <div class="overlap-2">
+                <div class="element-4">&nbsp;&nbsp;&nbsp;&nbsp;서초동 1604-19</div>
+                <img class="element-5" src="img/2025-07-08-4-08-57-1.png" />
+            </div>
+            <div class="overlap-3">
+                <div class="element-4">&nbsp;&nbsp;&nbsp;&nbsp;강남역 2번 출구</div>
+                <img class="element-5" src="img/2025-07-08-4-08-57-2.png" />
+            </div>
+        </div>
+    </div>
+</div>
+<a href="{% url 'set_people' %}" class="btn">다음 (인원 설정)</a>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 {% endblock content %}

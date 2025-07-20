@@ -1,0 +1,57 @@
+<!-- 차량 선택 화면 -->
+
+
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}차량 선택{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/call.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="head_container">
+    <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
+    <h1>차량 선택</h1>
+</div>
+<main class="screen">
+    <div class="content">
+        <header class="header">
+            <img class="map" src="img/2025-07-08-7-27-50-1.png" alt="지도 이미지" />
+            <button class="refresh-button" aria-label="새로고침"><span class="refresh-icon">♺</span> 새로고침</button>
+        </header>
+        <section class="search-results">
+            <h1 class="results-title">검색 결과</h1>
+            <ul class="bus-list">
+                <li class="bus-item selected">
+                    <div class="bus-icon">🚌</div>
+                    <div class="bus-info">
+                        <h2 class="boarding-time">9분 후 탑승</h2>
+                        <p class="arrival-time">오후 4:15~4:26 목적지 도착 예정</p>
+                    </div>
+                    <div class="selection-indicator">
+                        <span class="checkmark">✔️</span>
+                    </div>
+                </li>
+                <li class="bus-item">
+                    <div class="bus-icon">🚌</div>
+                    <div class="bus-info">
+                        <h2 class="boarding-time">28분 후 탑승</h2>
+                        <p class="arrival-time">오후 4:34~4:35 목적지 도착 예정</p>
+                    </div>
+                </li>
+            </ul>
+            <button class="call-button">호출하기 1,450원 예상</button>
+        </section>
+    </div>
+</main>
+<a href="{% url 'assigned_vehicle' %}" class="btn">다음 (배차된 차량)</a>
+
+
+
+
+{% endblock content %}
+
+{% block script %}
+{% endblock script %}

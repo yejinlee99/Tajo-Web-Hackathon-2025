@@ -2,16 +2,21 @@
 {% extends "layout/base.html" %}
 {% load static %}
 
-{% block title %}목적지 설정{% endblock %}
+{% block title %}관리자페이지{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 {% endblock extra_css %}
 
 {% block content %}
-<h1>관리자 화면</h1>
-<h2>이건 두번째 레슨....</h2>
-<a href="{% url 'main_home' %}" class="btn">이전....메인 홈</a>
+<div class="head_container">
+    <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
+    <h1>관리자 화면</h1>
+</div>
+<div class="box">
+    통계 그래프 들어갈 자리입니다.
+</div>
+
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 {% endblock content %}

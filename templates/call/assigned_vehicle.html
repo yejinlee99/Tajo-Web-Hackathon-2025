@@ -1,0 +1,66 @@
+<!-- 배차된 차량 화면 -->
+
+
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}배차된 차량{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/call.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="head_container">
+    <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
+    <h1>배차된 차량</h1>
+</div>
+<div id="arriveModal" class="modal">
+    <div class="modal-content">
+        <h1 class="info-title">타는 곳까지 걸어서<br />이동해 주세요.</h1>
+        <p class="station-name">AA정류장</p>
+        <p class="destination">CC중학교</p>
+        <img class="payment-image" src="img/2025-07-09-5-09-55-1.png" alt="삼성 페이 KB국민 6035" />
+        <div class="bus-info">
+            <div class="bus-number">
+                <span class="number">D10</span>
+                <span class="label">호차</span>
+            </div>
+            <p class="arrival-time">10분 후 도착합니다.</p>
+            <div class="seat-info">
+                <span class="seat-label">좌석</span>
+                <span class="seat-number">3A</span>
+            </div>
+        </div>
+        <button class="confirm-button" onclick="closeModal()">네, 알겠어요.</button>
+    </div>
+</div>
+<div class="frame">
+    <div class="overlap">
+        <div class="text-wrapper">좌석</div>
+        <div class="div">3A</div>
+    </div>
+    <div class="overlap-group">
+        <div class="rectangle"></div>
+        <img class="element" src="img/2025-07-09-4-48-59-1.png" />
+    </div>
+    <div class="overlap-2">
+        <div class="text-wrapper-2">D10</div>
+        <div class="text-wrapper-3">호차</div>
+    </div>
+    <div class="text-wrapper-4">10분 후 도착합니다.</div>
+    <div class="text-wrapper-5">ℹ︎ 도로 정보는 참고용입니다.</div>
+    <div class="div-wrapper"><div class="text-wrapper-6">💳 내 교통카드</div></div>
+    <div class="overlap-3"><div class="text-wrapper-7">🏠</div></div>
+    <div class="overlap-4"><div class="text-wrapper-8">1:1 상담</div></div>
+    <a href="{% url 'cancel_call' %}" class="btn">호출 취소</a>
+</div>
+
+
+{% endblock content %}
+
+
+{% block script %}
+<script src="{% static 'js/call/assigned_vehicle.js' %}"></script>
+{% endblock script %}
+

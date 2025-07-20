@@ -1,0 +1,63 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}인원 설정{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/call.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="head_container">
+    <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
+    <h1>인원 설정</h1>
+</div>
+<main class="screen">
+    <div class="content">
+        <header class="map-header">
+            <button class="back-button" aria-label="뒤로 가기">
+                <img src="img/2025-07-08-6-22-13-1.png" alt="뒤로 가기 아이콘" class="back-icon" />
+            </button>
+            <img src="img/2025-07-08-6-22-13-1.png" alt="지도" class="map-image" />
+        </header>
+        <section class="passenger-selection">
+            <h1 class="visually-hidden">승객 선택</h1>
+            <div class="passenger-type">
+                <label for="adult-count">성인</label>
+                <div class="counter">
+                    <button class="decrement" aria-label="성인 승객 감소">-</button>
+                    <input type="number" id="adult-count" value="1" min="0" max="9" readonly />
+                    <button class="increment" aria-label="성인 승객 증가">+</button>
+                </div>
+            </div>
+            <div class="passenger-type">
+                <label for="youth-count">청소년</label>
+                <div class="counter">
+                    <button class="decrement" aria-label="청소년 승객 감소">-</button>
+                    <input type="number" id="youth-count" value="0" min="0" max="9" readonly />
+                    <button class="increment" aria-label="청소년 승객 증가">+</button>
+                </div>
+            </div>
+            <div class="passenger-type">
+                <label for="child-count">어린이</label>
+                <img src="img/2025-07-08-6-30-31-1.png" alt="어린이 아이콘" class="child-icon" />
+                <div class="counter">
+                    <button class="decrement" aria-label="어린이 승객 감소">-</button>
+                    <input type="number" id="child-count" value="0" min="0" max="9" readonly />
+                    <button class="increment" aria-label="어린이 승객 증가">+</button>
+                </div>
+            </div>
+        </section>
+        <button class="next-button">다음</button>
+    </div>
+</main>
+<a href="{% url 'waiting' %}" class="btn">다음 (대기화면)</a>
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock content %}
+
+{% block script %}
+{% endblock script %}
