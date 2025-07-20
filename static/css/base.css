@@ -20,10 +20,17 @@ html, body {
     box-sizing: border-box;
   }
 
-/* h1 {
-    color: darkblue;
-    text-align: center;
-} */
+.head_container {
+    display: flex;            /* flexbox로 배치 */
+    justify-content: space-between;  /* 왼쪽, 오른쪽 끝에 배치 */
+    align-items: center;      /* 수직 중앙 */
+}
+
+.head_container h1 {
+    flex-grow: 1; /* h1이 가용 공간을 채워서 가운데로 배치 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    padding: 0 70px; /* 좌우 패딩 줄이기 */
+}
 
 /* 버튼 */
 .btn {
@@ -40,4 +47,22 @@ html, body {
   
 .btn:hover {
     background-color: #45a049;
+    }
+
+
+/* 홈으로 가기 버튼 */
+.go_home_btn {
+    display: inline-block;
+    padding: 10px 10px;
+    margin: 0;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 50%; /* 둥근 버튼 */
+    text-decoration: none;
+    font-size: 16px;
+    }
+  
+.go_home_btn:hover {
+    background-color:#BCE8F7;
     }
