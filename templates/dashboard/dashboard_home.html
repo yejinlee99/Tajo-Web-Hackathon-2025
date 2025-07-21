@@ -6,6 +6,7 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 {% endblock extra_css %}
 
 {% block content %}
@@ -13,13 +14,51 @@
     <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
     <h1>관리자 화면</h1>
 </div>
-<div class="box">
-    통계 그래프 들어갈 자리입니다.
-</div>
+<nav class="tab-menu">
+    <button class="tab active" data-tab="overview">요약</button>
+    <button class="tab" data-tab="charts">차트</button>
+    <button class="tab" data-tab="recent">최근 활동</button>
+    <button class="tab" data-tab="actions">빠른 작업</button>
+</nav>
 
+<main>
+    <!-- 요약 섹션 -->
+    <section class="tab-content" id="overview" style="display: block;">
+        <div class="stats-summary">
+            <div class="card">총 사용자<br><strong>1,240명</strong></div>
+            <div class="card">오늘 호출<br><strong>87건</strong></div>
+            <div class="card">미답변 문의<br><strong>5건</strong></div>
+        </div>
+    </section>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- 차트 섹션 -->
+    <section class="tab-content" id="charts" style="display: none;">
+        <div class="chart-container">
+            <canvas id="user-growth"></canvas>
+        </div>
+    </section>
+
+    <!-- 최근 활동 -->
+    <section class="tab-content" id="recent" style="display: none;">
+        <ul class="activity-list">
+            <li>Q. 요금은 얼마인가요?</li>
+            <li>Q. 탈 수 있는 조건이 있나요?</li>
+        </ul>
+    </section>
+
+    <!-- 빠른 작업 -->
+    <section class="tab-content" id="actions" style="display: none;">
+        <div class="action-buttons">
+            <button>FAQ 추가</button>
+            <button>공지 작성</button>
+            <button>상담 확인</button>
+        </div>
+    </section>
+</main>
+
 {% endblock content %}
 
 {% block script %}
+<script src="{% static 'js/dashboard/dashboard-tab.js' %}"></script>
+<script src="{% static 'js/dashboard/chart.js' %}"></script>
 {% endblock script %}
