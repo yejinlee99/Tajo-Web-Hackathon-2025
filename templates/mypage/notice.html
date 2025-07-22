@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-공지사항!!
-</body>
-</html>
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}공지사항{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/mypage/history.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="head_container">
+  <a href="{% url 'mypage_home' %}" class="back_btn">⬅️</a>
+  <h1>공지사항</h1>
+</div>
+{% endblock content %}
