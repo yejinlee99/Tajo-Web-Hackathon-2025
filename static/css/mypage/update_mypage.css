@@ -5,6 +5,12 @@
   text-decoration: none;  /* 밑줄 제거 */
   color: inherit;         /* 링크 색상도 기본 텍스트 색으로 */
 }
+.head_container {
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
 
 .update-container {
   padding: 20px;

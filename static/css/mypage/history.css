@@ -1,0 +1,13 @@
+/* 이용기록 페이지 레이아웃 */
+
+.back_btn {
+  margin-right: 16px;
+  font-size: 24px;
+  text-decoration: none;  /* 밑줄 제거 */
+  color: inherit;         /* 링크 색상도 기본 텍스트 색으로 */
+}
+.head_container {
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}

@@ -1,9 +1,16 @@
 /* 마이페이지 공통 레이아웃 */
 
 .go_home_btn {
-  margin-right: 16px;
+  /*margin-right: 1px;*/
   font-size: 24px;
 }
+
+.head_container {
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
 
 .mypage-container {
   padding: 16px;
