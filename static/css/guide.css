@@ -1,2 +1,78 @@
 /* 이용방법 guide 화면의 스타일을 관리합니다. */
 
+/* main.css */
+
+.go_home_btn {
+  margin-right: 16px;
+  font-size: 24px;
+}
+
+.head_container {
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+/* 탭 메뉴 스타일 */
+.tab-menu {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  white-space: nowrap;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.tab-menu li {
+  flex: 0 0 auto;
+  padding-bottom: 4px;
+}
+
+.tab-menu li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.tab-menu li.active {
+  border-bottom: 2px solid #007bff;
+}
+
+.tab-menu li.active a {
+  color: #007bff;
+}
+
+/* 탭 섹션 */
+.tab-section {
+  display: none;
+}
+
+.tab-section.active {
+  display: block;
+}
+
+.tab-section h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.tab-section p,
+.tab-section li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.tab-section ul {
+  padding-left: 20px;
+}
+
+/* 이미지 공통 스타일 */
+.method-image,
+.payment-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 1rem;
+}

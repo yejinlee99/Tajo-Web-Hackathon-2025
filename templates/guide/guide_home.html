@@ -1,20 +1,47 @@
-
 {% extends "layout/base.html" %}
 {% load static %}
 
-{% block title %}목적지 설정{% endblock %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/guide.css' %}">
-{% endblock extra_css %}
+{% block title %}DRT 호출방법{% endblock %}
 
 {% block content %}
-<h1>이용방법</h1>
-<h2>이건 두번째 레슨....</h2>
-<a href="{% url 'main_home' %}" class="btn">이전....메인 홈</a>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-{% endblock content %}
+<link rel="stylesheet" href="{% static 'css/guide.css' %}">
+
+<div class="head_container">
+  <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
+  <h1>이용방법</h1>
+</div>
+
+<div class="frame-wrapper">
+  <ul class="tab-menu">
+    <li class="active"><a href="#howtocall">버스 호출방법</a></li>
+    <li><a href="#howtopay">결제방법</a></li>
+  </ul>
+
+  <div id="howtocall" class="tab-section active">
+    <img src="{% static 'images/drt_guide.png' %}" alt="DRT 호출 방법 예시 화면" class="method-image" />
+    <p>🚩 홈화면 검색창 또는 DRT 메뉴를 선택하여 <strong>출발지와 도착지</strong>를 설정하세요.</p>
+    <p>🚶 <b>탑승 인원</b>을 설정하고, 호출 후 <b>안내된 정류장</b>으로 이동하세요.</p>
+    <br />
+    <h4>⭐유의사항⭐</h4>
+    <ul>
+      <li>출발지/도착지는 실제 정류장과 다를 수 있어요. 반드시 안내된 정류장을 확인하세요.</li>
+      <li>DRT는 실시간으로 최적 경로를 찾아 탑승 시간이 바뀔 수 있어요.</li>
+    </ul>
+  </div>
+
+  <div id="howtopay" class="tab-section">
+    <img src="{% static 'images/debit.png' %}" alt="결제 방법 안내" class="payment-image" />
+    <p>앱에서 신용/체크카드를 등록한 뒤 이용수단을 선택할 수 있어요.</p>
+    <h3>앱 결제</h3>
+    <p>승차 시 카드를 태그하지 않으면, 하차 시 등록된 카드로 자동 결제돼요.</p>
+    <h3>교통카드 태깅</h3>
+    <p>앱에 교통카드를 등록하면 태깅으로 결제 가능하며, 환승 할인도 받을 수 있어요.</p>
+  </div>
+</div>
+
+{% endblock %}
 
 {% block script %}
+<script src="{% static 'js/guide/guide.js' %}"></script>
 {% endblock script %}
