@@ -20,233 +20,654 @@
 }
 
 
-
-/*
-.screen {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
+/* where_to(목적지 설정) 화면 ----------------------------------------------------------*/
+.where-to-wrapper body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #f9f9f9;
 }
 
-.screen .div {
-  background-color: #ffffff;
-  overflow: hidden;
-  width: 1019px;
-  height: 1993px;
+/* 지도 영역 */
+.where-to-wrapper .map-container {
+  width: 100%;
+  height: 300px;
   position: relative;
 }
 
-.screen .rectangle {
-  height: 271px;
-  top: 3684px;
+.where-to-wrapper .location-pin {
   position: absolute;
-  width: 1019px;
-  left: 0;
-  background-color: #ffffff;
-  border-radius: 50px;
-  border: 1px solid;
-  border-color: #d9d9d9;
-  box-shadow: 0px 4px 4px #00000040;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #007bff;
+  border-radius: 50% 50% 50% 0;
+  transform: translateX(-50%) rotate(-45deg);
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
 }
 
-.screen .element {
-  position: absolute;
-  width: 125px;
-  height: 167px;
-  top: 5998px;
-  left: -32739px;
-  object-fit: cover;
+
+/* 카드 영역 */
+.where-to-wrapper .card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: -30px;
+  box-shadow: 0px -2px 12px rgba(0,0,0,0.05);
 }
 
-.screen .img {
-  position: absolute;
-  width: 134px;
-  height: 167px;
-  top: 5998px;
-  left: -32344px;
-  object-fit: cover;
-}
-
-.screen .overlap {
-  position: absolute;
-  width: 1024px;
-  height: 2296px;
-  top: 0;
-  left: -5px;
-}
-
-.screen .element-2 {
-  position: absolute;
-  width: 1019px;
-  height: 1050px;
-  top: 0;
-  left: 5px;
-  object-fit: cover;
-}
-
-.screen .rectangle-2 {
-  height: 1439px;
-  top: 857px;
-  position: absolute;
-  width: 1019px;
-  left: 0;
-  background-color: #ffffff;
-  border-radius: 50px;
-  border: 1px solid;
-  border-color: #d9d9d9;
-  box-shadow: 0px 4px 4px #00000040;
-}
-
-.screen .frame {
-  position: absolute;
-  width: 1019px;
-  height: 1993px;
-  top: 0;
-  left: 5px;
-}
-
-.screen .overlap-group {
-  position: absolute;
-  width: 114px;
-  height: 121px;
-  top: 684px;
-  left: 35px;
-}
-
-.screen .ellipse {
-  position: absolute;
-  width: 114px;
-  height: 114px;
-  top: 4px;
-  left: 0;
-  background-color: #ffffff;
-  border-radius: 57px;
-  border: 1px solid;
-  border-color: #d9d9d9;
-  box-shadow: 0px 4px 4px #00000040;
-}
-
-.screen .text-wrapper {
-  width: 54px;
-  top: 0;
-  left: 19px;
-  font-family: "Inter-SemiBold", Helvetica;
+/* 문장 + 아이콘 */
+.where-to-wrapper .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-weight: 600;
-  color: #000000;
-  font-size: 100px;
-  position: absolute;
-  letter-spacing: 0;
-  line-height: normal;
+  font-size: 16px;
+  margin-bottom: 16px;
 }
 
-.screen .text-wrapper-2 {
-  width: 182px;
-  top: 919px;
-  left: 35px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 180px;
-  white-space: nowrap;
-  position: absolute;
-  letter-spacing: 0;
-  line-height: normal;
+.where-to-wrapper .card-header img {
+  width: 24px;
+  margin-right: 8px;
 }
 
-.screen .DRT {
+.where-to-wrapper .info-button {
+  padding: 6px 5px;
+  min-width: 65px;     /* ✅ 이 부분이 핵심 */
+  font-size: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+}
+
+
+/* 위치 입력 */
+.where-to-wrapper .location-box {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* 자주 가는 위치 */
+.where-to-wrapper .favorite-place {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.where-to-wrapper .favorite-place span {
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+
+/* set_people(인원수 설정) 화면 -----------------------------------------------------*/
+
+.set_people-wrapper {
+  background-color: #f9f9f9;
+  font-family: 'Pretendard', sans-serif;
+}
+
+/* 지도 영역 */
+.set_people-wrapper .map-container {
+  width: 100%;
+  height: 300px;
+  background-color: #e0e0e0;
+  position: relative;
+}
+
+/* 출발/도착 라벨 */
+.set_people-wrapper .marker-label {
   position: absolute;
-  top: 957px;
-  left: 262px;
-  font-family: "Inter-SemiBold", Helvetica;
+  padding: 4px 10px;
+  color: white;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.set_people-wrapper .marker-label.start {
+  background-color: #007bff;
+  top: 100px;
+  left: 40px;
+}
+
+.set_people-wrapper .marker-label.end {
+  background-color: #f0456a;
+  top: 40px;
+  right: 40px;
+}
+
+/* 출발지 - 도착지 텍스트 박스 */
+.set_people-wrapper .location-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 20px;
+  font-size: 14px;
+  background-color: #fff;
+  gap: 8px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.set_people-wrapper .location-info .arrow {
+  font-size: 16px;
+}
+
+/* 인원 카운터 영역 */
+.set_people-wrapper .people-counter {
+  background-color: white;
+  padding: 20px;
+}
+
+.set_people-wrapper .counter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+.set_people-wrapper .counter-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.set_people-wrapper .count {
+  width: 20px;
+  text-align: center;
+}
+
+/* 수 조절용 버튼 */
+.set_people-wrapper .counter-btn {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* 다음 버튼 (기존 그대로 유지 가능, 원한다면 더 꾸며줄 수도 있어!) */
+.set_people-wrapper .next-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 16px;
   font-weight: 600;
-  color: #000000;
-  font-size: 50px;
-  letter-spacing: 0;
-  line-height: normal;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
-.screen .div-wrapper {
+
+/* waiting(대기중) 화면 ----------------------------------------------------------------*/
+/* 전체 화면 */
+.waiting-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #63a9df, #69b4e4);
+  color: white;
+  font-family: 'Pretendard', sans-serif;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* 중앙 메시지 */
+.center-message {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* 점 애니메이션 */
+.dots {
+  margin-top: 8px;
+  font-size: 30px;
+  letter-spacing: 6px;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%   { opacity: 0.2; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+/* Tips 박스 */
+.tips-box {
   position: absolute;
-  width: 202px;
-  height: 76px;
-  top: 920px;
-  left: 772px;
-  background-color: #ffffff;
-  border-radius: 60px;
-  border: 1px solid;
-  border-color: #d9d9d9;
+  bottom: 32px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 16px;
+  border-radius: 16px;
+  color: black;
+  width: 80%;
+  max-width: 350px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.screen .text-wrapper-3 {
-  top: 12px;
-  left: 26px;
-  font-family: "Inter-SemiBold", Helvetica;
+.tips-label {
+  background-color: black;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.tips-text {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
+
+/* select_vehicle(차량 선택) 화면 ----------------------------------------------------------------*/
+.select-vehicle-wrapper {
+  font-family: 'Pretendard', sans-serif;
+  background-color: #f9f9f9;
+}
+
+.select-vehicle-wrapper .map-container {
+  width: 100%;
+  height: 300px;
+  background-color: #e0e0e0;
+}
+
+/* 결과 + 새로고침 */
+.select-vehicle-wrapper .result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.select-vehicle-wrapper .refresh-btn {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* 차량 선택 카드 */
+.select-vehicle-wrapper .vehicle-option {
+  background-color: white;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 10px 16px;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border: 2px solid transparent;
+  transition: border 0.2s ease;
+}
+
+.select-vehicle-wrapper .vehicle-option.selected {
+  border-color: #007bff;
+}
+
+.select-vehicle-wrapper .vehicle-info {
+  font-size: 15px;
   font-weight: 600;
-  color: #d9d9d9;
-  font-size: 40px;
-  white-space: nowrap;
-  position: absolute;
-  letter-spacing: 0;
-  line-height: normal;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
 }
 
-.screen .element-3 {
-  position: absolute;
-  width: 941px;
-  height: 334px;
-  top: 1119px;
-  left: 35px;
-  object-fit: cover;
+.select-vehicle-wrapper .time {
+  font-size: 13px;
+  color: #555;
 }
 
-.screen .text-wrapper-4 {
-  top: 1545px;
-  left: 54px;
-  font-family: "Inter-Regular", Helvetica;
+/* 체크 아이콘 */
+.select-vehicle-wrapper .check-icon {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  color: #007bff;
+  font-size: 18px;
+}
+
+/* 호출 버튼 */
+.select-vehicle-wrapper .call-button-box {
+  padding: 16px;
+  background-color: white;
+  box-shadow: 0 -1px 8px rgba(0,0,0,0.05);
+}
+
+.select-vehicle-wrapper .call-button {
+  display: block;
+  text-align: center;
+  text-decoration: none;     /* 밑줄 제거 */
+  background-color: #007bff;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+/* assigned_vehicle(배차된 차량) 화면 ----------------------------------------------------------------*/
+.assigned-wrapper {
+  font-family: 'Pretendard', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* 지도 영역 */
+.assigned-wrapper .map-container {
+  position: relative;
+  height: 300px;
+  background-color: #eee;
+}
+
+/* 상단 버튼 */
+.assigned-wrapper .top-buttons {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.assigned-wrapper .chat-btn,
+.assigned-wrapper .cancel-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.assigned-wrapper .chat-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.assigned-wrapper .cancel-btn {
+  background-color: #ffdddd;
+  color: #d00;
+}
+
+/* 차량 도착 상태 카드 */
+.assigned-wrapper .vehicle-status-card {
+  background: white;
+  margin: 30px 16px 10px;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.assigned-wrapper .vehicle-badge {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 16px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.assigned-wrapper .vehicle-badge .label {
+  font-size: 12px;
   font-weight: 400;
-  color: #000000;
-  font-size: 50px;
-  position: absolute;
-  letter-spacing: 0;
-  line-height: normal;
 }
 
-.screen .overlap-2 {
-  position: absolute;
-  width: 430px;
-  height: 80px;
-  top: 1666px;
-  left: 28px;
+.assigned-wrapper .arrival-info {
+  font-size: 14px;
 }
 
-.screen .element-4 {
-  position: absolute;
-  top: 9px;
-  left: 26px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 50px;
-  letter-spacing: 0;
-  line-height: normal;
+.assigned-wrapper .arrival-info .seat {
+  font-weight: bold;
+  margin-top: 6px;
 }
 
-.screen .element-5 {
-  position: absolute;
+/* 상세 경로 카드 */
+.assigned-wrapper .route-info-box {
+  background: white;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.assigned-wrapper .route-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.assigned-wrapper .route-steps li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.assigned-wrapper .route-steps .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.assigned-wrapper .dot.blue {
+  background: #007bff;
+}
+
+.assigned-wrapper .dot.gray {
+  background: #aaa;
+}
+
+.assigned-wrapper .dot.red {
+  background: #f00;
+}
+
+.assigned-wrapper .sub {
+  font-size: 12px;
+  color: #888;
+  margin-left: 6px;
+}
+
+/* 하단 안내 및 교통카드 */
+.assigned-wrapper .footer-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px;
+  font-size: 12px;
+  color: #777;
+}
+
+.assigned-wrapper .my-card-btn {
+  padding: 8px 12px;
+  font-size: 12px;
+  background: #f2f2f2;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* 모달 오버레이 (배경) */
+.assigned-wrapper #arriveModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
+  z-index: 9999;
+  display: none; /* 처음에는 숨김 */
+  justify-content: center;
+  align-items: center;
+}
+
+/* 모달 컨텐츠 박스 */
+.assigned-wrapper .assign-modal {
+  background-color: white;
+  border-radius: 20px;
+  padding: 24px;
+  width: 85%;
+  max-width: 360px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* 모달 타이틀 */
+.assigned-wrapper .modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* 정류장명 */
+.assigned-wrapper .location-info {
+  font-size: 15px;
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* 정류장 하위 설명 */
+.assigned-wrapper .location-sub {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+
+/* 카드 이미지 포함하는 박스 */
+.assigned-wrapper .card-box {
+  margin: 12px 0;
+}
+
+/* 삼성페이 카드 이미지 */
+.assigned-wrapper .card-image {
   width: 80px;
-  height: 80px;
-  top: 0;
-  left: 0;
-  object-fit: cover;
+  height: auto;
 }
 
-.screen .overlap-3 {
-  position: absolute;
-  width: 417px;
-  height: 80px;
-  top: 1796px;
-  left: 28px;
+/* 차량 이름 */
+.assigned-wrapper .vehicle-name {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #333;
 }
- */
+
+/* 도착 예정 시간 */
+.assigned-wrapper .eta {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+/* 좌석 정보 */
+.assigned-wrapper .seat-info {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* 확인 버튼 */
+.assigned-wrapper .confirm-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+
+.assigned-wrapper #cancelModal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.assigned-wrapper .cancel-modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  width: 80%;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.assigned-wrapper .cancel-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.assigned-wrapper .cancel-desc {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.assigned-wrapper .cancel-count {
+  font-size: 14px;
+  color: #e60000;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.assigned-wrapper .cancel-btn-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.assigned-wrapper .cancel-no,
+.assigned-wrapper .cancel-yes {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  cursor: pointer;
+  background: white;
+}
+
+.assigned-wrapper .cancel-yes {
+  color: #e60000;
+  border-color: #e60000;
+}
+
+

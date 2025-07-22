@@ -8,55 +8,57 @@
 {% endblock extra_css %}
 
 {% block content %}
-<div class="head_container">
-    <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
-    <h1>인원 설정</h1>
-</div>
-<main class="screen">
-    <div class="content">
-        <header class="map-header">
-            <button class="back-button" aria-label="뒤로 가기">
-                <img src="img/2025-07-08-6-22-13-1.png" alt="뒤로 가기 아이콘" class="back-icon" />
-            </button>
-            <img src="img/2025-07-08-6-22-13-1.png" alt="지도" class="map-image" />
-        </header>
-        <section class="passenger-selection">
-            <h1 class="visually-hidden">승객 선택</h1>
-            <div class="passenger-type">
-                <label for="adult-count">성인</label>
-                <div class="counter">
-                    <button class="decrement" aria-label="성인 승객 감소">-</button>
-                    <input type="number" id="adult-count" value="1" min="0" max="9" readonly />
-                    <button class="increment" aria-label="성인 승객 증가">+</button>
-                </div>
-            </div>
-            <div class="passenger-type">
-                <label for="youth-count">청소년</label>
-                <div class="counter">
-                    <button class="decrement" aria-label="청소년 승객 감소">-</button>
-                    <input type="number" id="youth-count" value="0" min="0" max="9" readonly />
-                    <button class="increment" aria-label="청소년 승객 증가">+</button>
-                </div>
-            </div>
-            <div class="passenger-type">
-                <label for="child-count">어린이</label>
-                <img src="img/2025-07-08-6-30-31-1.png" alt="어린이 아이콘" class="child-icon" />
-                <div class="counter">
-                    <button class="decrement" aria-label="어린이 승객 감소">-</button>
-                    <input type="number" id="child-count" value="0" min="0" max="9" readonly />
-                    <button class="increment" aria-label="어린이 승객 증가">+</button>
-                </div>
-            </div>
-        </section>
-        <button class="next-button">다음</button>
+<div class="set_people-wrapper">
+    <div class="head_container">
+        <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
+        <h1>인원 설정</h1>
     </div>
-</main>
-<a href="{% url 'waiting' %}" class="btn">다음 (대기화면)</a>
 
+    <!-- 지도 영역 -->
+    <div class="map-container">
+    <!-- 네이버 지도 들어갈 자리 -->
+    <div class="marker-label start">여기서 출발</div>
+    <div class="marker-label end">도착</div>
+    </div>
 
+    <!-- 경로 정보 -->
+    <div class="location-info">
+    <span>창전동 171</span>
+    <span class="arrow">➡</span>
+    <span>선경2차아파트</span>
+    </div>
 
+    <!-- 인원 설정 -->
+    <div class="people-counter">
+    <div class="counter-row">
+        <span>성인</span>
+        <div class="counter-box">
+        <button class="counter-btn minus">-</button>
+        <span class="count">1</span>
+        <button class="counter-btn plus">+</button>
+        </div>
+    </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="counter-row">
+        <span>청소년</span>
+        <div class="counter-box">
+        <button class="counter-btn minus">-</button>
+        <span class="count">1</span>
+        <button class="counter-btn plus">+</button>
+        </div>
+    </div>
+
+    <div class="counter-row">
+        <span>어린이</span>
+        <div class="counter-box">
+        <button class="counter-btn minus">-</button>
+        <span class="count">1</span>
+        <button class="counter-btn plus">+</button>
+        </div>
+    </div>
+
+    <a href="{% url 'waiting' %}" class="btn">다음 (대기화면)</a>
+</div>
 {% endblock content %}
 
 {% block script %}
