@@ -1,20 +1,53 @@
-
 {% extends "layout/base.html" %}
 {% load static %}
 
-{% block title %}목적지 설정{% endblock %}
+{% block title %}마이페이지{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/mypage.css' %}">
+<link rel="stylesheet" href="{% static 'css/mypage/mypage.css' %}">
 {% endblock extra_css %}
 
 {% block content %}
-<h1>마이페이지</h1>
-<h2>이건 두번째 레슨....</h2>
-<a href="{% url 'main_home' %}" class="btn">이전....메인 홈</a>
+<div class="head_container">
+  <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
+  <h1>마이페이지</h1>
+</div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="mypage-container">
+  <!-- 프로필 영역 -->
+  <a href="{% url 'update_mypage' %}" class="profile-link">
+    <div class="profile">
+      <img src="{% static 'images/kungya.jpg' %}" alt="프로필" class="profile-img" />
+      <div class="profile-info">
+        <div class="nickname">멋쟁이 주먹밥</div>
+        <div class="email">abcd1234@naver.com</div>
+      </div>
+      <div class="profile-arrow">></div>
+    </div>
+  </a>
+
+  <!-- 메뉴 영역 -->
+  <div class="menu-list">
+    <a href="{% url 'card' %}" class="menu-item">
+      <span class="menu-icon">💳</span>
+      <span class="menu-text">카드관리</span>
+    </a>
+    <a href="{% url 'bookmark' %}" class="menu-item">
+      <span class="menu-icon">⭐</span>
+      <span class="menu-text">즐겨찾기</span>
+    </a>
+    <a href="{% url 'history' %}" class="menu-item">
+      <span class="menu-icon">📄</span>
+      <span class="menu-text">이용기록</span>
+    </a>
+    <a href="{% url 'notice' %}" class="menu-item">
+      <span class="menu-icon">📢</span>
+      <span class="menu-text">공지사항</span>
+    </a>
+    <a href="{% url 'qna' %}" class="menu-item">
+      <span class="menu-icon">❓</span>
+      <span class="menu-text">고객문의</span>
+    </a>
+  </div>
+</div>
 {% endblock content %}
-
-{% block script %}
-{% endblock script %}

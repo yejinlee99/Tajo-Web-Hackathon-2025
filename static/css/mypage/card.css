@@ -1,0 +1,134 @@
+/* 카드관리 페이지 레이아웃 */
+
+.back_btn {
+  margin-right: 16px;
+  font-size: 24px;
+  text-decoration: none;  /* 밑줄 제거 */
+  color: inherit;         /* 링크 색상도 기본 텍스트 색으로 */
+}
+
+.card-container {
+  padding: 20px;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* 카드 섹션 */
+.card-section {
+  margin-bottom: 32px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.link-text {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+}
+
+/* 카드 아이템 */
+.card-item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+}
+
+.card-logo {
+  width: 60px;
+  height: 40px;
+  background-color: #8B4513;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+.bank-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-info {
+  flex: 1;
+}
+
+.bank-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.card-number {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 교통카드 등록 버튼 */
+.add-card-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: #E8E8E8;
+  color: #666;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 32px;
+}
+
+.add-card-btn:hover {
+  background-color: #DDDDDD;
+}
+
+/* 안내 텍스트 영역 */
+.info-section {
+  margin-top: 40px;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-list li {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 12px;
+}
+
+.info-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #999;
+}
