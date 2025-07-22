@@ -1,0 +1,86 @@
+/* 즐겨찾기 페이지 레이아웃 */
+
+.back_btn {
+  margin-right: 16px;
+  font-size: 24px;
+  text-decoration: none;  /* 밑줄 제거 */
+  color: inherit;         /* 링크 색상도 기본 텍스트 색으로 */
+}
+
+
+.bookmark-container {
+  padding: 20px;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #fafafa;
+  min-height: 100vh;
+}
+
+/* 즐겨찾기 항목 */
+.bookmark-item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 16px;
+}
+
+.bookmark-icon {
+  font-size: 24px;
+  margin-right: 16px;
+  width: 32px;
+  text-align: center;
+}
+
+.bookmark-info {
+  flex: 1;
+}
+
+.bookmark-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.bookmark-address {
+  font-size: 14px;
+  color: #666;
+}
+
+.bookmark-actions {
+  margin-left: auto;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: #4A90E2;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.action-btn:hover {
+  background-color: #f0f8ff;
+  border-radius: 4px;
+}
+
+/* 즐겨찾기 추가 버튼 */
+.add-bookmark-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: #E8E8E8;
+  color: #666;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 32px;
+}
+
+.add-bookmark-btn:hover {
+  background-color: #DDDDDD;
+}

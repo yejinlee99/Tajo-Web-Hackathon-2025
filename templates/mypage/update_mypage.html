@@ -1,0 +1,43 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}프로필 수정{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/mypage/update_mypage.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="head_container">
+  <a href="{% url 'mypage_home' %}" class="back_btn">⬅️</a>
+  <h1>프로필 수정</h1>
+</div>
+
+<div class="update-container">
+  <!-- 프로필 이미지 영역 -->
+  <div class="profile-image-section">
+    <div class="profile-image-wrapper">
+      <img src="{% static 'images/kungya.jpg' %}" alt="프로필" class="profile-img" />
+      <button class="camera-btn">📷</button>
+    </div>
+  </div>
+
+  <!-- 입력 폼 영역 -->
+  <form class="profile-form">
+    <div class="input-group">
+      <label for="nickname">닉네임</label>
+      <input type="text" id="nickname" value="멋쟁이 주먹밥" class="form-input">
+    </div>
+
+    <div class="input-group">
+      <label for="email">이메일</label>
+      <input type="email" id="email" value="abcd1234@naver.com" class="form-input">
+    </div>
+
+
+    <!-- 변경하기 버튼 -->
+    <button type="submit" class="update-btn">변경하기</button>
+  </form>
+
+</div>
+{% endblock content %}

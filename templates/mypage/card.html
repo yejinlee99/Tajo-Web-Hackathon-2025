@@ -1,0 +1,64 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}카드관리{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/mypage/card.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="head_container">
+  <a href="{% url 'mypage_home' %}" class="back_btn">⬅️</a>
+  <h1>카드 관리</h1>
+</div>
+
+<div class="card-container">
+  
+  <!-- 결제카드 섹션 -->
+  <div class="card-section">
+    <h2 class="section-title">결제카드</h2>
+    
+    <div class="card-item">
+    <div class="card-logo">
+      KB국민
+    </div>
+      <div class="card-info">
+        <div class="bank-name">KB국민</div>
+        <div class="card-number">1234 **** **** 4321</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 교통카드 섹션 -->
+  <div class="card-section">
+    <div class="section-header">
+      <h2 class="section-title">교통카드</h2>
+      <a href="#" class="link-text">환승 할인 인내 ></a>
+    </div>
+    
+    <div class="card-item">
+        <div class="card-logo">
+          KB국민
+        </div>
+      <div class="card-info">
+        <div class="bank-name">KB국민</div>
+        <div class="card-number">1234 **** **** 4321</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 교통카드 등록 버튼 -->
+  <button class="add-card-btn">+ 교통카드 등록</button>
+
+  <!-- 안내 텍스트 -->
+  <div class="info-section">
+    <ul class="info-list">
+      <li>카드 문제로 결제 실패한 금액이 있을 경우, 결제 완료 후 이동 수단을 이용할 수 있습니다.</li>
+      <li>탑승 대기중 등록한 교통카드는 승차단말기에 인식되지 않을 수 있습니다.</li>
+      <li>실물 카드 번호와 교통카드 번호가 다를 경우 교통카드 태깅이 안될 수 있어요. 이 경우 고객 문의를 확인해주세요.</li>
+    </ul>
+  </div>
+
+</div>
+{% endblock content %}
