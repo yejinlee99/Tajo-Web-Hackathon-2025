@@ -1,28 +1,84 @@
-<!-- templates/base.html -->
+{% extends "layout/base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Static files test</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <script src="{% static 'js/script.js' %}"></script>
-</head>
-<body>
-    <h1>Team 타조 !</h1>
-    <h2>이건 첫번째 레슨....</h2>
-    <h2>되라 제발 되라고..좀!!!!!!!!!</h2>
-    <a href="{% url 'call_home' %}" class="btn">호출 call</a> <br>
-    <a href="{% url 'faq_home' %}" class="btn">FAQ faq</a><br>
-    <a href="{% url 'guide_home' %}" class="btn">이용방법 guide</a><br>
-    <a href="https://pf.kakao.com/_GrDxin?default_tab=hometab" class="btn">카카오 상담하기 kakao</a><br>
-    <a href="{% url 'mypage_home' %}" class="btn">마이페이지 mypage</a><br>
-    <a href="{% url 'dashboard_home' %}" class="btn">관리자 페이지 dashboard</a>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    
-</body>
-<footer>
-    <h2>태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘태워줘</h2>
-</footer>
-</html>
+
+{% block title %}메인{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="overlap-wrapper">
+  <div class="overlap">
+    <main class="main-content">
+      <header class="header head_container">
+        <h3 class="location">📍OO동 주변</h3>
+        <div class="user-info">
+          <u>멋쟁이 주먹밥</u>님
+        </div>
+      </header>
+
+      <section class="hero">
+        <h2 class="hero-title">타줘 !</h2>
+        <p class="hero-description">부르면 <br />찾아가는 DRT</p>
+        <span class="hero-icon" aria-hidden="true">🚌</span>
+      </section>
+
+      <form class="search-form" role="search">
+        <label for="search-input" class="visually-hidden">목적지 검색</label>
+        <input type="search" id="search-input" class="search-input" placeholder="어디로 가세요?" />
+        <button type="button" class="search-button" aria-label="검색" onclick="location.href='{% url 'where_to' %}'">🔍</button>
+      </form>
+
+     <section class="quick-access">
+      <h2 class="section-title">즐겨찾기</h2>
+      <ul class="quick-access-list">
+        <li class="quick-access-item" onclick="location.href='{% url 'set_people' %}'" style="cursor:pointer;">
+          <span class="quick-access-icon"></span> 서초동 1604-19 ➡️ 강남역 2번 출구
+        </li>
+      </ul>
+    </section>
+
+
+      <section class="faq">
+        <h2 class="section-title">자주 묻는 질문(FAQ)</h2>
+        <div class="faq-box" onclick="location.href='{% url 'faq_home' %}'">
+          <span class="faq-icon">❓</span>
+          <span class="faq-text">궁금한 점이 있으신가요?</span>
+          <span class="faq-arrow">→</span>
+        </div>
+      </section>
+
+      <section class="info-buttons">
+        <div class="info-button-container">
+          <div class="info-button" onclick="location.href='{% url 'guide_home' %}'">
+            <span class="info-icon">📋</span>
+            <span class="info-text">이용방법</span>
+          </div>
+          <div class="info-button" onclick="window.open('https://pf.kakao.com/_GrDxin?default_tab=hometab')">
+            <span class="info-icon">💬</span>
+            <span class="info-text">1:1 상담</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <nav class="footer-nav">
+        <div class="footer-link">
+          <div class="footer-icon">🦖</div>
+          이동
+        </div>
+        <a href="{% url 'mypage_home' %}" class="footer-link">
+          <div class="footer-icon heart-icon">❤️</div>
+          내 정보
+        </a>
+      </nav>
+      <div class="admin-section">
+        <button class="admin-button" onclick="location.href='{% url 'dashboard_home' %}'">
+          관리자 페이지
+        </button>
+      </div>
+    </footer>
+  </div>
+</div>
+{% endblock %}

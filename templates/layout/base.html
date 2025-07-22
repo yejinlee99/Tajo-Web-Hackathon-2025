@@ -1,0 +1,25 @@
+<!-- base.html: 모든 페이지의 공통 구조를 정의하는 템플릿입니다. -->
+<!-- 모바일 크기에 최적화된 뷰포트 및 container 구조를 포함합니다. -->
+
+<!-- templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}페이지 제목{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}{% endblock extra_css %}
+</head>
+<body>
+
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    {% block script %}
+    {% endblock script %}
+</body>
+</html>

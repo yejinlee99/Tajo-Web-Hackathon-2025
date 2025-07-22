@@ -1,14 +1,35 @@
-/* 기본 base 버튼, 폰트, 공통 레이아웃 등 을 관리합니다. */
+/* 모바일 화면처럼 보이게 하는 스타일을 관린합니다. */
+/* 현재 모바일 설정 : iPhone SE */
 
 
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #858282;
+  }
+  
 
-body {
-    background-color: #f5f5f5;
+/* 공통 모바일 박스 스타일 */
+.container {
+    max-width: 375px;
+    margin: 0 auto;
+    background-color: white; /* 내부 박스는 흰색 */
+    min-height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 모바일 박스 느낌 */
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+.head_container {
+    display: flex;            /* flexbox로 배치 */
+    justify-content: space-between;  /* 왼쪽, 오른쪽 끝에 배치 */
+    align-items: center;      /* 수직 중앙 */
 }
 
-h1 {
-    color: darkblue;
-    text-align: center;
+.head_container h1 {
+    flex-grow: 1; /* h1이 가용 공간을 채워서 가운데로 배치 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    padding: 0 70px; /* 좌우 패딩 줄이기 */
 }
 
 /* 버튼 */
@@ -26,4 +47,22 @@ h1 {
   
 .btn:hover {
     background-color: #45a049;
+    }
+
+
+/* 홈으로 가기 버튼 */
+.go_home_btn {
+    display: inline-block;
+    padding: 10px 10px;
+    margin: 0;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 50%; /* 둥근 버튼 */
+    text-decoration: none;
+    font-size: 16px;
+    }
+  
+.go_home_btn:hover {
+    background-color:#BCE8F7;
     }

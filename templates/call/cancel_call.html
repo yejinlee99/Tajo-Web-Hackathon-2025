@@ -1,0 +1,45 @@
+<!-- 호출취소 화면 -->
+
+
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}호출 취소{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/call.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="head_container">
+    <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
+    <h1>호출 취소</h1>
+</div>
+<div class="frame">
+    <div class="image-wrapper"><img class="image" src="img/image-31.png" /></div>
+</div>
+<a onclick="openCancelModal()" class="btn">호출 취소</a>
+
+<div id="cancelModal" class="modal">
+    <div class="modal-content">
+        <p>정말 호출을 취소하시겠어요?</p>
+        <div class="modal-actions">
+            <button onclick="goToHome()">확인</button>
+            <button onclick="closeCancelModal()">취소</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock content %}
+
+{% block script %}
+<script>
+    // url이 js에서 사용될 수 있도록 설정
+  const redirectTo = "{% url 'main_home' %}";
+</script>
+<script src="{% static 'js/call/cancel_call.js' %}"></script>
+{% endblock script %}

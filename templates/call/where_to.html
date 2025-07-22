@@ -1,0 +1,48 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}목적지 설정{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/call.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="where-to-wrapper">
+  <div class="head_container">
+      <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
+      <h1>목적지 설정</h1>
+  </div>
+
+  <div class="map-container">
+    <!-- 네이버 지도 삽입 예정 -->
+    <div class="location-pin"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div>
+        🚌 가까운 서비스 지역에서 DRT를 호출해 보세요.
+      </div>
+      <button class="info-button">운행정보</button>
+    </div>
+
+    <div class="location-box">
+      <div>🔹 출발지 : 서초대로 139-11</div>
+      <div>🔸 도착지 :     검색      </div>
+    </div>
+
+    <div class="favorite-place">
+      🏠 <span>서초동 1604-19</span>
+    </div>
+    <div class="favorite-place">
+      🚇 <span>강남역 2번 출구</span>
+    </div>
+  </div>
+
+  <a href="{% url 'set_people' %}" class="btn">다음 (인원 설정)</a>
+</div>
+{% endblock content %}
+
+{% block script %}
+{% endblock script %}

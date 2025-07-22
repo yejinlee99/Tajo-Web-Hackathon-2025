@@ -1,0 +1,104 @@
+<!-- 배차된 차량 화면 -->
+
+
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}배차된 차량{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/call.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="head_container">
+  <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
+  <h1>배차된 차량</h1>
+</div>
+
+<div class="assigned-wrapper">
+
+  <!-- 🚗 모달 - 타는 곳 안내 -->
+  <div id="arriveModal">
+    <div class="assign-modal">
+      <p class="modal-title">타는 곳까지 걸어서<br>이동해 주세요.</p>
+      <div class="location-info">AA정류장</div>
+      <div class="location-sub">CC중학교</div>
+
+      <div class="card-box">
+        <img src="/static/img/samsungpay.png" alt="삼성페이 카드" class="card-image">
+        <div class="vehicle-name">KB국민 6035</div>
+      </div>
+
+      <div class="eta">10분 후 도착합니다.</div>
+      <div class="seat-info">좌석 3A</div>
+
+      <button class="confirm-button" onclick="closeModal()">네, 알겠어요.</button>
+    </div>
+  </div>
+
+  <!-- 🗺️ 메인 콘텐츠 -->
+  <div class="main-content">
+
+    <!-- 지도 영역 -->
+    <div class="map-container">
+      <!-- 네이버 지도 (임시) -->
+      <div class="top-buttons">
+        <button class="chat-btn">1:1 상담</button>
+        <button class="cancel-btn">호출 취소</button>
+      </div>
+    </div>
+
+    <!-- 차량 정보 카드 -->
+    <div class="vehicle-status-card">
+      <div class="vehicle-badge">
+        D10<br><span class="label">호차</span>
+      </div>
+      <div class="arrival-info">
+        <div class="eta">10분 후 도착합니다.</div>
+        <div class="seat">좌석 <strong>3A</strong></div>
+      </div>
+    </div>
+
+    <!-- 상세 경로 카드 -->
+    <div class="route-info-box">
+      <ul class="route-steps">
+        <li><span class="dot blue"></span> 출발 <span class="sub">도보 3분</span></li>
+        <li><span class="dot gray"></span> 탑승 <span class="sub">오후 5:19 선경아파트</span></li>
+        <li><span class="dot gray"></span> 하차 <span class="sub">오후 5:44 ~ 5:49 이마트역</span></li>
+        <li><span class="dot red"></span> 도착 <span class="sub">도보 3분</span></li>
+      </ul>
+    </div>
+
+    <!-- 하단 안내 -->
+    <div class="footer-box">
+      <span class="notice">* 도로 정보는 참고용입니다.</span>
+      <button class="my-card-btn">내 교통카드</button>
+    </div>
+
+  </div>
+
+  <!-- ❌ 호출 취소 모달 -->
+  <div id="cancelModal" class="modal-overlay">
+    <div class="cancel-modal">
+      <p class="cancel-title">호출을 취소하시겠어요?</p>
+      <p class="cancel-desc">호출 후 1분 이내 취소는 3회부터<br>수수료가 부과됩니다.</p>
+      <p class="cancel-count">오늘 취소 횟수 <span>0회</span></p>
+      <div class="cancel-btn-box">
+        <button class="cancel-no" onclick="closeCancelModal()">아니요</button>
+        <button class="cancel-yes" onclick="goHome()">네, 취소할게요.</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+{% endblock content %}
+
+
+{% block script %}
+<script src="{% static 'js/call/assigned_vehicle.js' %}"></script>
+{% endblock script %}
+

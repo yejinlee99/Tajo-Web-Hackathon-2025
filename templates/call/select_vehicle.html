@@ -1,0 +1,59 @@
+<!-- 차량 선택 화면 -->
+
+
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}차량 선택{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/call.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="head_container">
+    <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
+    <h1>차량 선택</h1>
+</div>
+
+<div class="select-vehicle-wrapper">
+    <!-- 지도 영역 -->
+    <div class="map-container">
+        <!-- 네이버 지도 삽입 예정 -->
+    </div>
+
+    <!-- 검색 결과 -->
+    <div class="result-header">
+        <span>검색 결과</span>
+        <button class="refresh-btn">⟳ 새로고침</button>
+    </div>
+
+    <!-- 차량 리스트 -->
+    <div class="vehicle-option selected">
+        <div class="vehicle-info">
+            🚌 <span class="title">9분 후 탑승</span>
+        </div>
+        <div class="time">오후 4:15~4:26 목적지 도착 예정</div>
+        <div class="check-icon">✔</div>
+    </div>
+
+    <div class="vehicle-option">
+        <div class="vehicle-info">
+            🚌 <span class="title">28분 후 탑승</span>
+        </div>
+        <div class="time">오후 4:34~4:35 목적지 도착 예정</div>
+    </div>
+
+     <!-- 호출 버튼 -->
+    <div class="call-button-box">
+    <a href="{% url 'assigned_vehicle' %}" class="call-button">
+        호출하기 1,450원 예상
+    </a>
+    </div>
+</div>
+{% endblock content %}
+
+
+
+{% block script %}
+{% endblock script %}

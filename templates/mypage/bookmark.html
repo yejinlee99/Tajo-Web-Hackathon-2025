@@ -1,0 +1,34 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}즐겨찾기{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/mypage/bookmark.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="head_container">
+  <a href="{% url 'mypage_home' %}" class="back_btn">⬅️</a>
+  <h1>즐겨찾기</h1>
+</div>
+
+<div class="bookmark-container">
+  
+  <!-- 즐겨찾기 항목 -->
+  <div class="bookmark-item">
+    <div class="bookmark-icon">🏠</div>
+    <div class="bookmark-info">
+      <div class="bookmark-title">집</div>
+      <div class="bookmark-address">경기 이천시 이천대로 1395</div>
+    </div>
+    <div class="bookmark-actions">
+      <button class="action-btn">수정</button>
+    </div>
+  </div>
+
+  <!-- 즐겨찾기 추가 버튼 -->
+  <button class="add-bookmark-btn">즐겨찾기 추가</button>
+
+</div>
+{% endblock content %}

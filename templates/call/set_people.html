@@ -1,0 +1,65 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block title %}인원 설정{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/call.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="set_people-wrapper">
+    <div class="head_container">
+        <a href="{% url 'main_home' %}" class="go_home_btn">🏠</a>
+        <h1>인원 설정</h1>
+    </div>
+
+    <!-- 지도 영역 -->
+    <div class="map-container">
+    <!-- 네이버 지도 들어갈 자리 -->
+    <div class="marker-label start">여기서 출발</div>
+    <div class="marker-label end">도착</div>
+    </div>
+
+    <!-- 경로 정보 -->
+    <div class="location-info">
+    <span>창전동 171</span>
+    <span class="arrow">➡</span>
+    <span>선경2차아파트</span>
+    </div>
+
+    <!-- 인원 설정 -->
+    <div class="people-counter">
+    <div class="counter-row">
+        <span>성인</span>
+        <div class="counter-box">
+        <button class="counter-btn minus">-</button>
+        <span class="count">1</span>
+        <button class="counter-btn plus">+</button>
+        </div>
+    </div>
+
+    <div class="counter-row">
+        <span>청소년</span>
+        <div class="counter-box">
+        <button class="counter-btn minus">-</button>
+        <span class="count">1</span>
+        <button class="counter-btn plus">+</button>
+        </div>
+    </div>
+
+    <div class="counter-row">
+        <span>어린이</span>
+        <div class="counter-box">
+        <button class="counter-btn minus">-</button>
+        <span class="count">1</span>
+        <button class="counter-btn plus">+</button>
+        </div>
+    </div>
+
+    <a href="{% url 'waiting' %}" class="btn">다음 (대기화면)</a>
+</div>
+{% endblock content %}
+
+{% block script %}
+{% endblock script %}
