@@ -1,8 +1,258 @@
-/* 메인 main 화면의 스타일을 관리합니다. */
+/* base.html에서 container, head_container, btn 등 공통 스타일 처리 */
 
+.overlap-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
 
+.overlap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
+.main-content {
+  flex: 1;
+  padding: 0 1rem; /* base.css padding 단위에 맞춤 */
+  overflow-y: auto;
+}
 
+.hero {
+  text-align: center;
+  padding: 40px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin: 20px -1rem;
+  border-radius: 16px;
+  color: white;
+  position: relative;
+}
 
+.hero-title {
+  font-size: 2.25rem; /* 36px */
+  font-weight: bold;
+  margin-bottom: 8px;
+}
 
+.hero-description {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
 
+.hero-icon {
+  font-size: 3rem; /* 48px */
+  display: block;
+}
+
+.search-form {
+  position: relative;
+  margin: 30px 0;
+}
+
+.search-input {
+  width: 100%;
+  padding: 16px 50px 16px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+}
+
+.search-button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.25rem; /* 20px */
+  cursor: pointer;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 30px 0 16px 0;
+  color: #333;
+}
+
+.quick-access-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.quick-access-item {
+  padding: 16px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.quick-access-item:hover {
+  background-color: #e9ecef;
+}
+
+.quick-access-icon {
+  font-size: 1.25rem;
+  margin-right: 12px;
+}
+
+.faq-box {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.faq-box:hover {
+  background-color: #e9ecef;
+  transform: translateY(-1px);
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  margin-right: 12px;
+}
+
+.faq-text {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.faq-arrow {
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.info-buttons {
+  margin: 20px 0;
+}
+
+.info-button-container {
+  display: flex;
+  gap: 12px;
+}
+
+.info-button {
+  flex: 1;
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-button:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.info-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.heart-icon {
+  background-color: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+}
+
+.admin-section {
+  padding: 16px;
+  border-top: 1px solid #eee;
+}
+
+.admin-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.admin-button:hover {
+  background-color: #5a6268;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  border-top: 1px solid #eee;
+  padding: 16px 0;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #666;
+  font-size: 0.75rem;
+}
+
+.footer-icon {
+  background-color: transparent;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  margin-bottom: 4px;
+  font-size: 1.25rem;
+}
+
+/* 스크린 리더용 숨김 텍스트 */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
