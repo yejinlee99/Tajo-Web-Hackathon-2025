@@ -35,7 +35,8 @@ ALLOWED_HOSTS = [
     "52.78.209.56",
     "eb-taewojo-env.eba-scw6jbim.ap-northeast-2.elasticbeanstalk.com",
     "www.taewojo.site",
-    "taewojo.site"
+    "taewojo.site",
+    "ec2-52-78-209-56.ap-northeast-2.compute.amazonaws.com",
 ]
 
 
